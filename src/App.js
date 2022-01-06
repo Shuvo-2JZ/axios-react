@@ -10,12 +10,6 @@ export default class App extends Component {
     persons: []
   };
 
-  constructor() {
-    super();
-
-    console.log(this.state.persons);
-  }
-
   // Axios parses the JSON for you.
   // You can access this JSON on the data field of the response object
 
@@ -24,6 +18,24 @@ export default class App extends Component {
       // if we follow the naming convention
       const response = res.data; // getting the data as json and passing in setState
       const persons = [...response, ...data];
+
+      // const newCar = {
+      //   userId: 42069,
+      //   id: 4204206969,
+      //   title: "Mitsubishi Lancer Evolution V",
+      //   completed: false
+      // };
+
+      // array methods
+      // persons.push(newCar);
+      // persons.splice(4, 0, newCar);
+      // console.log(
+      //   persons.find((person) => person.id === 420420 && person.userId === 420)
+      // );
+      // console.log(
+      //   persons.filter((person) => person.id === 420420 && person.userId === 420)
+      // );
+
       this.setState({ persons });
 
       // if we do not follow the naming convention
